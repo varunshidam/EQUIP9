@@ -10,7 +10,7 @@ const EditUser = () => {
     username: "",
     email: "",
     phone: "",
-    website: "",
+    password: "",
   });
 
   const { name, username, email, phone, website } = user;
@@ -77,16 +77,9 @@ const EditUser = () => {
               onChange={(e) => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your Website Name"
-              name="website"
-              value={website}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
+
+          
+          <div className="form-group"></div>
           <button className="btn btn-warning btn-block">Update User</button>
         </form>
       </div>

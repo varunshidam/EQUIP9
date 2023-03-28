@@ -13,6 +13,7 @@ import User from "./pages/User";
 import SignUpForm from "./pages/SignUpForm";
 import PrivateRoutes from "./pages/PrivateRoutes";
 import AddUserData from "./components/users/AddUserData";
+import RegisterationForm from "./pages/RegisterationForm";
 
 function App() {
   return (
@@ -74,7 +75,8 @@ function App() {
               </PrivateRoutes>
             }
           />
-          <Route path="/register" element={<Registration />} />
+          {/* <Route path="/register" element={<Registration />} /> */}
+          <Route path="/register" element={<RegisterationForm />} />
           <Route path="/" element={<SignUpForm />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/*" element={<PageNotFound />} />

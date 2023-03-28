@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 
 const SignUpForm = () => {
+  const [users, setUsers] = useState([]);
   const navigate = useNavigate();
   const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
   const phoneRegExp =

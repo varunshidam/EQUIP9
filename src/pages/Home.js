@@ -6,7 +6,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export function Home() {
   const [users, setUsers] = useState([]);
-  const [msg, setMsg] = useState("Hi");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,10 +36,11 @@ export function Home() {
     greeting = "Good Morning";
   } else if (curHr < 18) {
     greeting = "Good Afternoon";
+  } else if (curHr < 23) {
+    greeting = "Good Night";
   } else {
-    greeting = "Good Evening";
+    greeting = "Good Night";
   }
-
   const notify = () => {
     // Calling toast method by passing string
     toast("Deleted", {
@@ -59,8 +59,7 @@ export function Home() {
           <img src={`../../assets/user.jpg`} style={{ maxWidth: 100 }} />
           <h1>
             {" "}
-            {greeting}, {loggeduser.fname} {loggeduser.lname} Thank you for
-            visiting.
+            {greeting}, {loggeduser.name} Thank you for visiting.
           </h1>
         </div>
       </div>
@@ -71,6 +70,8 @@ export function Home() {
             <th scope="col">Name</th>
             <th scope="col">User Name</th>
             <th scope="col">Emails</th>
+            <th scope="col">Phone</th>
+            <th scope="col">password</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -81,6 +82,8 @@ export function Home() {
               <td>{user.name}</td>
               <td>{user.username}</td>
               <td>{user.email}</td>
+              <td>{user.phone}</td>
+              <td>#########</td>
               <td>
                 <div
                   className="btn-group"
