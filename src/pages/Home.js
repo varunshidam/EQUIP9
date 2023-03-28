@@ -36,10 +36,8 @@ export function Home() {
     greeting = "Good Morning";
   } else if (curHr < 18) {
     greeting = "Good Afternoon";
-  } else if (curHr < 23) {
-    greeting = "Good Night";
   } else {
-    greeting = "Good Night";
+    greeting = "Good Evening";
   }
   const notify = () => {
     // Calling toast method by passing string
@@ -63,6 +61,7 @@ export function Home() {
           </h1>
         </div>
       </div>
+
       <table className="table">
         <thead>
           <tr>
